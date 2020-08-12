@@ -1,5 +1,5 @@
 FROM node:latest
-MAINTAINER Christian Lück <christian@lueck.tv>
+MAINTAINER Leon Grünewald <leon.gruenewald@kreativrudel.de>
 
 RUN npm install -g json-server
 

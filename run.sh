@@ -28,4 +28,4 @@ fi
 
 args='$@ -H "$HOST" -p "$PORT"'
 
-json-server "0.0.0.0" $args
+json-server $args

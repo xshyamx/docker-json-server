@@ -26,6 +26,5 @@ if [ -f $file ]; then
     args="$args file.js"
 fi
 
-args="$@ -H '$HOST' -p '$PORT'"
-
+args="$@ $args -H '$HOST' -p '$PORT'"
 json-server $args

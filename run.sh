@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 
-args="$@ -p 80"
+if [ -z "$HOST" ]; then
+    HOST="0.0.0.0"
+fi
+
+if [ -z "$PORT" ]; then
+    PORT="80"
+fi
 
 file=/data/db.json
 if [ -f $file ]; then
@@ -20,4 +26,6 @@ if [ -f $file ]; then
     args="$args file.js"
 fi
 
-json-server $args
+args='$@ -H "$HOST" -p "$PORT"'
+
+json-server "0.0.0.0" $args

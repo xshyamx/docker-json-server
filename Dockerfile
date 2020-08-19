@@ -3,6 +3,10 @@ MAINTAINER Leon Grünewald <leon.gruenewald@kreativrudel.de>
 
 RUN npm install -g json-server
 
+WORKDIR /data-server
+RUN npm install json-server
+RUN echo "" > sevrer.js
+
 WORKDIR /data
 VOLUME /data
 

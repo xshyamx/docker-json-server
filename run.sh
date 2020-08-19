@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 file=/data/server.js
-if [ -f $file]; then
+if [ -f $file ]; then
     echo "Found server.js, ignoring other files"
     args="$@"
     node $file $args

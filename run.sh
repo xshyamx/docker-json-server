@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-file=/data/server.js
+file=/data-server/server.js
 if [ -f $file ]; then
     echo "Found server.js, ignoring other files"
     args="$@"

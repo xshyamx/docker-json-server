@@ -4,6 +4,14 @@
 API mocking based on plain JSON.  This is a
 [docker](https://hub.docker.com/) image that eases setup.
 
+This image is available on Docker Hub at
+https://hub.docker.com/r/xshyamx/json-server tagged with the same
+version of the corresponding `json-sever`
+
+```sh
+docker pull xshyamx/json-server:0.17.0
+```
+
 ## Build ##
 
 Build the base docker image with the following command

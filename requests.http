@@ -1,0 +1,15 @@
+# -*- mode: restclient -*-
+
+:host := "localhost:3000"
+
+# posts
+GET http://:host/posts
+
+# comments
+GET http://:host/comments
+
+# profile
+GET http://:host/profile
+
+# nested resource
+GET http://:host/posts/1/comments

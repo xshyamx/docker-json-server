@@ -21,9 +21,15 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Build container
+      run: |
+        docker build -t json-server .
+    - name: Extract json-server version
+      run: |
+        echo "JSON_SERVER_VERSION=$(docker run --rm json-server -v)" >> $GITHUB_ENV 
     - name: Build
       uses: docker/build-push-action@v2
       with:
         context: .
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/json-server:0.17.0
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/json-server:${{ env.JSON_SERVER_VERSION }}

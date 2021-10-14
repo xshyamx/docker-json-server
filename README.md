@@ -147,7 +147,7 @@ A sample file could look like this:
 
 ```json
 {
-	"/posts/:id/comments": "/comments?postId=:id"
+  "/posts/:id/comments": "/comments?postId=:id"
 }
 ```
 

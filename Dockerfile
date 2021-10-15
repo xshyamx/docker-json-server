@@ -1,7 +1,5 @@
 FROM node:lts-alpine
 
-RUN apk add bash
-
 VOLUME /data
 
 WORKDIR /sample
@@ -22,7 +20,8 @@ ADD entrypoint.sh /entrypoint.sh
 
 WORKDIR /app
 
-RUN npm install json-server
+RUN apk add bash \
+		&& npm install json-server
 
 ENTRYPOINT [ "/entrypoint.sh" ]
 

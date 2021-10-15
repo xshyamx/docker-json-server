@@ -1,11 +1,6 @@
 FROM node:lts-alpine
 
-RUN apk add bash \
-		&& npm install -g json-server
-
-WORKDIR /app
-
-RUN npm install json-server
+RUN apk add bash
 
 VOLUME /data
 
@@ -13,7 +8,8 @@ WORKDIR /sample
 
 ADD db.json routes.json seed.js server.js ./
 
-ENV SERVER_JS=/app/server.js \
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/app/node_modules/.bin \
+		SERVER_JS=/app/server.js \
 		DB_JSON=/data/db.json \
 		ROUTES_JSON=/data/routes.json \
 		SEED_JS=/data/seed.js \
@@ -25,6 +21,8 @@ EXPOSE 3000
 ADD entrypoint.sh /entrypoint.sh
 
 WORKDIR /app
+
+RUN npm install json-server
 
 ENTRYPOINT [ "/entrypoint.sh" ]
 

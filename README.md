@@ -58,12 +58,12 @@ The following environment variables can be overriden to achieve different behavi
 | `SERVER_JS`   | Custom server using `json-server` as a module | `/app/server.js`    |
 | `DB_JSON`     | API database json                             | `/data/db.json`     |
 | `ROUTES_JSON` | Custom routes                                 | `/data/routes.json` |
-| `FILES_JS`    | Load custome data programmatically            | `/data/file.js`     |
+| `SEED_JS`     | Load custome data programmatically            | `/data/seed.js`     |
 | `HOST`        | Expose server on host                         | 0.0.0.0             |
 | `PORT`        | Expose server on port                         | 3000                |
 
 The presence of `SERVER_JS` will override `DB_JSON`, `ROUTES_JSON` &
-`FILES_JS` and gets priority over the other environment variables.
+`SEED_JS` and gets priority over the other environment variables.
 
 Sample files for each of the these files are available in the
 `/sample` folder in the container
@@ -133,16 +133,16 @@ Which can be mounted as
 ```sh
 docker run -d \
   -p 3000:3000 \
-  -v /home/user/index.js:/data/file.js
+  -v /home/user/index.js:/data/seed.js
   json-server
 ```
 
-or alternatively override the `FILES_JS` environment variable
+or alternatively override the `SEED_JS` environment variable
 
 ```sh
 docker run -d \
   -p 3000:3000 \
-  -e FILES_JS=/sample/file.js
+  -e SEED_JS=/sample/seed.js
   json-server
 ```
 

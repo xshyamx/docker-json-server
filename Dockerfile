@@ -11,12 +11,12 @@ VOLUME /data
 
 WORKDIR /sample
 
-ADD db.json routes.json file.js server.js ./
+ADD db.json routes.json seed.js server.js ./
 
 ENV SERVER_JS=/app/server.js \
 		DB_JSON=/data/db.json \
 		ROUTES_JSON=/data/routes.json \
-		FILES_JS=/data/file.js \
+		SEED_JS=/data/seed.js \
 		HOST=0.0.0.0 \
 		PORT=3000
 

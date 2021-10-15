@@ -21,9 +21,9 @@ fi
 
 skip_args=y
 # prefer files over db.json
-if [ -f $FILES_JS ]; then
-  echo "Found files.js file, trying to open"
-  args="$args $FILES_JS"
+if [ -f $SEED_JS ]; then
+  echo "Found seed.js file, trying to open"
+  args="$args $SEED_JS"
 	skip_args=n
 elif [ -f $DB_JSON ]; then
   echo "Found db.json, trying to open"

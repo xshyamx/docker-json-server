@@ -25,7 +25,7 @@ version:
 files:
 	docker run -d \
   --name ${IMAGE_NAME} \
-  -e FILES_JS=/sample/file.js \
+  -e SEED_JS=/sample/seed.js \
   -p 3000:3000 \
   ${IMAGE_NAME}
 

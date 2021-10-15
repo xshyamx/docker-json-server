@@ -4,7 +4,7 @@ VOLUME /data
 
 WORKDIR /sample
 
-ADD db.json routes.json seed.js server.js ./
+ADD ./sample .
 
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/app/node_modules/.bin \
 		SERVER_JS=/app/server.js \

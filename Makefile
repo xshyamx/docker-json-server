@@ -36,3 +36,7 @@ server:
   -p 3000:3000 \
   ${IMAGE_NAME}
   
+shell:
+	docker run --rm \
+  -it --entrypoint=/bin/bash \
+  ${IMAGE_NAME}

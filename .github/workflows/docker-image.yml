@@ -38,9 +38,8 @@ jobs:
         docker tag ${{ env.IMAGE_NAME }} ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ env.JSON_SERVER_VERSION }}
         docker push ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ env.JSON_SERVER_VERSION }}
     - name: Tag & Push to Github registry
-        # This is where you will update the PAT to GITHUB_TOKEN
-        run: |
-          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-          IMAGE_ID=ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:${{ env.JSON_SERVER_VERSION }}
-          docker tag ${{ env.IMAGE_NAME }} $IMAGE_ID
-          docker push $IMAGE_ID
+      run: |
+        echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+        IMAGE_ID=ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:${{ env.JSON_SERVER_VERSION }}
+        docker tag ${{ env.IMAGE_NAME }} $IMAGE_ID
+        docker push $IMAGE_ID
